@@ -3,16 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Gravity</title>
     <style>
       body{
         margin: 0px;
         overflow: hidden;
       }
+      #numberInputContainer {
+            position: absolute;
+            top: 10px; 
+            left: 50%;
+            transform: translateX(-50%); 
+            z-index: 1; 
+            text-align: center;
+        }
     </style>
     <script type="text/javascript" src="https://livejs.com/live.js"></script>
   </head>
   <body>
+    <div id="numberInputContainer">
+        <h2>    And thus the Apple falls    </h2>
+        <label for="numberInput">Enter Number Of Balls:</label>
+        <input type="number" id="numberInput" placeholder="Type a number">
+        <button onclick="send()">GO</button>
+    </div>
     <canvas></canvas>
     <script src="animate.js"></script>
   </body>
