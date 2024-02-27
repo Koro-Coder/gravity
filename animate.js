@@ -12,12 +12,14 @@ function circle() {
   this.x = Math.random() * (canvas.width - 2 * this.rad) + this.rad;
   this.y = Math.random() * (canvas.height - 2 * this.rad) + this.rad;
   this.dx = (Math.random() - 0.5) * 4;
-  this.dy = 1;
+  this.dy = 0.5;
+  this.color = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
+
 
   this.draw = function () {
     c.beginPath();
     c.arc(this.x, this.y, this.rad, 0, Math.PI * 2, true);
-    c.fillStyle = "purple";
+    c.fillStyle = this.color;
     c.fill();
     c.stroke();
 
@@ -25,7 +27,7 @@ function circle() {
       this.dx = -this.dx;
     }
     if (this.y + this.rad + this.dy * this.counter > canvas.height) {
-      this.counter *= -0.8;
+      this.counter *= -0.9;
     } else {
       this.counter += 1;
     }
